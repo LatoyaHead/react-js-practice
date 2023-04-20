@@ -1,14 +1,13 @@
 import React from "react"
+import CountButton from "./CountButton"
 
 const App = () => {
-  const myItem = 'toya'
 
   return ( 
-    <ul>
-      <li>item1</li>
-      <li>item225 {myItem}</li>
-      <li>{myItem.toUpperCase()}</li>
-    </ul>
+    <div>
+      <CountButton incrementBy={1} />
+      <CountButton incrementBy={5} />
+    </div>
   )
 }
 
