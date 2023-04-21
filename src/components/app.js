@@ -1,13 +1,14 @@
 import React from "react"
-import CountButton from "./CountButton/CountButton"
+// import CountButton from "./CountButton/CountButton"
+import SearchBar from "./SearchBar/SearchBar"
 
 const App = () => {
 
   return ( 
     <div>
-      <CountButton incrementBy={1} buttonColor={'red'} borderRadius={'10px'} />
-      <CountButton incrementBy={5} buttonColor={'lightBlue'} borderRadius={'20px'} />
-      <CountButton incrementBy={100} buttonColor={'pink'} borderRadius={'15px'} />
+      <SearchBar/>
+      {/* <CountButton incrementBy={1} buttonColor={'red'} borderRadius={'10px'} /> */}
+      {/* <CountButton incrementBy={5} buttonColor={'lightBlue'} borderRadius={'20px'} /> */}
     </div>
   )
 }
