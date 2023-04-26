@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import './CountButton.css'
 
 
@@ -18,6 +18,18 @@ const buttonStyles = {
   background: props.buttonColor,
   borderRadius: props.borderRadius,
 }
+
+useEffect(() => {
+if(currentCount === 10){
+  alert("the count is 10")
+}
+
+}, [currentCount]) 
+useEffect(() => {
+if(currentCount === 10){
+  alert("the count is 10")
+}
+}, [currentCount]) 
 
   return (
     <div style={divStyle}>

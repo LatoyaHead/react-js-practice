@@ -1,32 +1,33 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import CountButton from "./CountButton/CountButton"
 import SearchBar from "./SearchBar/SearchBar"
+import Button from "./Button/Button"
 
 
 const App = () => {
+  const [productState, setProductState] = useState([])
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+    .then(productsArray => {
+        const newProductsState = productsArray.map((product) => {
+          return product.title
+        })
+        setProductState(newProductsState)
+      })
+  }, [])
+
+  const hasProducts = productState.length > 0
 
   return ( 
     <div>
-      <SearchBar 
-      const products = {[
-        'tooth paste',
-        'tooth brush',
-        'mouth wash',
-        'dental floss',
-        'mouth guard',
-      ]}/>
-      <SearchBar 
-      const products = {[
-        'bike rake',
-        'bike brush',
-        'tire pump',
-        'soccer ball',
-        'bike guard',
-      ]}/>
-      <CountButton incrementBy={1} buttonColor={'red'} borderRadius={'10px'} />
-      <CountButton incrementBy={5} buttonColor={'lightBlue'} borderRadius={'20px'} />
+      <Button>hello world</Button>
+      <Button>hello world2</Button>
+      {hasProducts ? <SearchBar products={productState}/> : 'Loading...'}
+      <CountButton incrementBy={1} buttonColor={'lightBlue'} borderRadius={'10px'} />
     </div>
   )
 }
 
-export default App 
+export default App
